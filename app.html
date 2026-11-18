@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pandora | ERP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="assets/js/app.js" defer></script>
+  <script src="categoria/categoria.js" defer></script>
+  <script src="productos/productos.js" defer></script>
+</head>
+
+<body class="app-body">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand sidebar-brand" href="#">
+        <span class="brand-mark">
+          <i class="fa-solid fa-gem"></i>
+        </span>
+        <span>Pandora</span>
+      </a>
+      <div class="workspace-label">ESPACIO DE TRABAJO</div>
+      <div class="workspace-card">
+        <div class="workspace-icon">✧</div>
+        <div><strong>Mi empresa</strong><small>Panel de administración</small></div><span
+          class="workspace-chevron">⌄</span>
+      </div>
+      <div class="nav-label">MENÚ PRINCIPAL</div>
+      <nav class="side-nav">
+        <button class="nav-item active" data-view="categoria"><span
+            class="nav-icon">▦</span><span>Categorías</span><span class="nav-arrow">›</span></button>
+        <button class="nav-item" data-view="productos"><span class="nav-icon">◇</span><span>Productos</span><span
+            class="nav-arrow">›</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <div class="help-symbol">✦</div><strong>¿Necesitas ayuda?</strong>
+          <p>Este es un entorno local de demostración.</p>
+        </div>
+        <div class="sidebar-version">PANDORA ERP <span>v1.0.0</span></div>
+      </div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <div class="topbar-left"><button class="mobile-menu" id="mobileMenu" aria-label="Abrir menú">☰</button>
+          <div>
+            <div class="breadcrumb">Workspace <span>/</span> <b id="breadcrumbCurrent">Categorías</b></div>
+            <div class="topbar-date" id="todayDate"></div>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <div class="schedule-chip"><span class="schedule-dot"></span><span>Horario</span><b id="clock">--:--:--</b>
+          </div>
+          <div class="profile-wrap"><button class="profile-button" id="profileButton"><span class="avatar"
+                id="avatarInitial">A</span><span class="profile-info"><strong
+                  id="profileName">Administrador</strong><small>Administrador</small></span><span
+                class="profile-chevron">⌄</span></button>
+            <div class="profile-menu hidden" id="profileMenu">
+              <div class="profile-menu-user"><strong id="menuUser">Administrador</strong><small>Sesión activa</small>
+              </div><button id="logoutButton"><span>↪</span> Cerrar sesión</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="content-area">
+        <section class="welcome-strip">
+          <div><span class="eyebrow accent">PANEL DE CONTROL</span>
+            <h1 id="pageTitle">Categorías</h1>
+            <p id="pageDescription">Organiza tus productos agrupándolos en categorías.</p>
+          </div>
+          <div class="welcome-decoration">
+            <div class="decoration-circle">P</div><span>Gestiona con claridad.</span>
+          </div>
+        </section>
+        <div id="moduleContent" class="module-content">
+          <div class="loading-state">Cargando módulo…</div>
+        </div>
+        <footer class="app-footer"><span>© 2026 Pandora ERP</span><span>Hecho para simplificar tu gestión
+            <b>✦</b></span></footer>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
