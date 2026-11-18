@@ -1,0 +1,39 @@
+
+name: CI - Validación del proyecto
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  validate:
+    if: startsWith(github.head_ref, 'feature/')
+    name: Validar frontend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Verificar estructura del proyecto
+        run: |
+          test -f index.html
+          test -f app.html
+          test -f Login/login.js
+          test -f assets/js/app.js
+
+      - name: Validar sintaxis JavaScript
+        run: |
+          find . -type f -name "*.js" \
+            -not -path "./.git/*" \
+            -print0 | xargs -0 -r -n1 node --check
